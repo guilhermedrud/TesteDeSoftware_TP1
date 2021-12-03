@@ -13,7 +13,7 @@ class Rook(Piece):
         moves = []
         bounds= ['a','b','c','d','e','f','g','h']
         #print(curr_pos)
-        row= curr_pos[1]-1 #0
+        row= curr_pos[1] #0
         col= self.find_pos(curr_pos[0]) #3
         #print("rowcol:", row,col, matrix[row][col])
         for i in range(row-1,-1,-1): # down

@@ -1,5 +1,8 @@
 from pieces.Piece import Piece
 from pieces.Rook import Rook
+from pieces.Bishop import Bishop
+from pieces.King import King
+from pieces.Knight import Knight
 import Board
 import numpy as np
 from typing import Tuple
@@ -25,22 +28,22 @@ class ChessEngine:
                 else: color=-1
                 if (project.get_position(i, j)=='k') | (project.get_position(i, j)=='K'):
                     king_piece =  King(color, self.pair_to_str(i,j), project.get_position(i, j))
-                    self.pieces[i-1][j]= king_piece
+                    self.pieces[i][j]= king_piece
                 elif (project.get_position(i, j)=='q') | (project.get_position(i, j)=='Q'):
                     queen_piece = Queen(color, self.pair_to_str(i,j), project.get_position(i, j))
-                    self.pieces[i-1][j]= queen_piece
+                    self.pieces[i][j]= queen_piece
                 elif(project.get_position(i, j)=='b') | (project.get_position(i, j)=='B'):
                     bishop_piece = Bishop(color, self.pair_to_str(i,j), project.get_position(i, j))
-                    self.pieces[i-1][j]= bishop_piece
+                    self.pieces[i][j]= bishop_piece
                 elif(project.get_position(i, j)=='n') | (project.get_position(i, j)=='N'):
                     knight_piece = Knight( color, self.pair_to_str(i,j), project.get_position(i, j))
-                    self.pieces[i-1][j]= knight_piece
+                    self.pieces[i][j]= knight_piece
                 elif(project.get_position(i, j)=='r') | (project.get_position(i, j)=='R'):
                     rook_piece = Rook( color, self.pair_to_str(i,j), project.get_position(i, j))
-                    self.pieces[i-1][j]= rook_piece
+                    self.pieces[i][j]= rook_piece
                 elif(project.get_position(i, j)=='p') | (project.get_position(i, j)=='P'):
                     pawn_piece = Pawn( color, self.pair_to_str(i,j), project.get_position(i, j))
-                    self.pieces[i-1][j]= pawn_piece
+                    self.pieces[i][j]= pawn_piece
         self.update_movements()
     
     def get_board(self):

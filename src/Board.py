@@ -12,7 +12,12 @@ class Board:
     def build_board(self, board_str: str):
         num_lines = 0
         curline_len = 0
-        
+        print(board_str)
+        corr_str = board_str.split("/")
+        corr_str.reverse()
+        print(corr_str)
+        board_str = "/".join(corr_str)
+
         board = np.empty((self.size,self.size), dtype=str)
         for char in board_str:
             if num_lines == self.size: break

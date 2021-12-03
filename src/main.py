@@ -14,9 +14,9 @@ def print_board(tab: Board):
         print('{:>3}'.format(bounds[i])+" ",end="")
     print("\n",end="")
 
-
+# K6K/1r4r1/8/Kr2r1rK/4K3/4r3/1r6/K5rK
 if __name__ == "__main__":
-    tab = Board("8/3R4/8/8/R2r2R1/8/8/3R4")
+    tab = Board("8/8/8/5k2/3N4/8/8/8")
     B = ChessEngine(tab)
     B.update_movements()
     B.print_board()
