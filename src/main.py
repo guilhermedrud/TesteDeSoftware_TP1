@@ -1,6 +1,6 @@
-from pieces import Piece
-import Board
-import ChessEngine
+from pieces.Piece import Piece
+from Board import Board, classic
+from ChessEngine import ChessEngine
 
 def print_board(tab: Board):
     bounds = ['a','b','c','d','e','f','g','h']
@@ -16,7 +16,7 @@ def print_board(tab: Board):
 
 
 if __name__ == "__main__":
-    tab = Board('classic')
+    tab = Board("8/3R4/8/8/R2r2R1/8/8/3R4")
     B = ChessEngine(tab)
     B.update_movements()
     B.print_board()
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     color =1
     lose = 0
     strcolor = 'White'
-    while lose == 0:
+    while lose != 220:
         if color == 1: strcolor = "White"
         else: strcolor = "Black"
         print(strcolor+" player's turn")
