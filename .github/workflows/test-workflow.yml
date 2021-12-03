@@ -18,5 +18,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
       - name: Test with pytest
-        run: |
-          pytest tests.py --doctest-modules --junitxml=junit/test-results.xml
+        run: | 
+          pytest ./tests/TestBishop.py
+          pytest ./tests/TestBoard.py
+          pytest ./tests/TestChessEngine.py
+          pytest ./tests/TestKing.py
+          pytest ./tests/TestKnight.py
+          pytest ./tests/TestPawn.py
+          pytest ./tests/TestQueen.py
+          pytest ./tests/TestRook.py 
