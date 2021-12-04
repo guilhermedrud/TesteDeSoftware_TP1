@@ -45,7 +45,28 @@ class Board:
             return board
         else:
             raise Exception("invalid fen board string")
-        
+    
+    def to_string(self):
+        tab = ""
+        count_blank = 0
+        for i in range(self.size):
+            for j in range(self.size):
+                if self.board[i][j] == ' ':
+                    count_blank+=1
+                else:
+                    if count_blank > 0:
+                        tab += str(count_blank)
+                        count_blank = 0
+                    tab += self.board[i][j]
+            if count_blank > 0:
+                tab += str(count_blank)
+                count_blank = 0
+            if i < self.size -1: tab += "/"
+        corr_str = tab.split("/")
+        corr_str.reverse()
+        tab = "/".join(corr_str)
+        return tab
+    
     def set_position(self, row: int, col: int, piece_code: str):
         if (row > self.size): raise Exception("row out of bounds")
         if (col > self.size): raise Exception("col out of bounds")
