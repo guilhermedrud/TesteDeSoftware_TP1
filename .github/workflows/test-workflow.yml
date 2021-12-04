@@ -20,11 +20,11 @@ jobs:
           pip install numpy
       - name: Test with pytest
         run: | 
-          pytest ./tests/TestBishop.py
-          pytest ./tests/TestBoard.py
-          pytest ./tests/TestChessEngine.py
-          pytest ./tests/TestKing.py
-          pytest ./tests/TestKnight.py
-          pytest ./tests/TestPawn.py
-          pytest ./tests/TestQueen.py
-          pytest ./tests/TestRook.py 
+          python ./tests/TestBishop.py
+          python ./tests/TestBoard.py
+          python ./tests/TestChessEngine.py
+          python ./tests/TestKing.py
+          python ./tests/TestKnight.py
+          python ./tests/TestPawn.py
+          python ./tests/TestQueen.py
+          python ./tests/TestRook.py 
