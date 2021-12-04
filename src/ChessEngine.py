@@ -1,11 +1,11 @@
-from pieces.Piece import Piece
-from pieces.Rook import Rook
-from pieces.Bishop import Bishop
-from pieces.King import King
-from pieces.Knight import Knight
-from pieces.Pawn import Pawn
-from pieces.Queen import Queen
-import Board
+from src.pieces.Piece import Piece
+from src.pieces.Rook import Rook
+from src.pieces.Bishop import Bishop
+from src.pieces.King import King
+from src.pieces.Knight import Knight
+from src.pieces.Pawn import Pawn
+from src.pieces.Queen import Queen
+from src.Board import Board
 import numpy as np
 from typing import Tuple
 

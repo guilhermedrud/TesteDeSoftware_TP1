@@ -1,6 +1,6 @@
-from pieces.Piece import Piece
-from Board import Board, classic
-from ChessEngine import ChessEngine
+from src.pieces.Piece import Piece
+from src.Board import Board, classic
+from src.ChessEngine import ChessEngine
 
 def print_board(tab: Board):
     bounds = ['a','b','c','d','e','f','g','h']

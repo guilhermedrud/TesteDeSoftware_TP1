@@ -1,4 +1,4 @@
-from pieces.Piece import Piece
+from src.pieces.Piece import Piece
 from typing import Tuple
 
 class Queen(Piece):
