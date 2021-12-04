@@ -3,7 +3,7 @@ from src.pieces.Piece import Piece
 from src.Board import Board, classic
 from src.ChessEngine import ChessEngine
 
-class TestBishop(unittest.TestCase):
+class TestBoard(unittest.TestCase):
     
     def test_empty_board(self):
         tab = Board("8/8/8/8/8/8/8/8")
