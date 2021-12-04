@@ -15,7 +15,7 @@ class Piece:
 
     def highlight_possible_moves(self):
         current = self.get_curr_pos()
-        text = str(current[0])+str(current[1])+" have "+str(len(self.possible_moves))+" legal movements: "
+        text = str(current[0])+str(current[1]+1)+" have "+str(len(self.possible_moves))+" legal movements: "
         for move in self.possible_moves:
             text += str(self.bounds[move[1]])+str(move[0]+1)+", "
         print(text)

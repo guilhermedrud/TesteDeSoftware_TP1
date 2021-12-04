@@ -16,7 +16,7 @@ def print_board(tab: Board):
 
 # K6K/1r4r1/8/Kr2r1rK/4K3/4r3/1r6/K5rK
 if __name__ == "__main__":
-    tab = Board("8/8/8/5k2/3N4/8/8/8")
+    tab = Board(classic())
     B = ChessEngine(tab)
     B.update_movements()
     B.print_board()
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     color =1
     lose = 0
     strcolor = 'White'
-    while lose != 220:
+    while lose == 0:
         if color == 1: strcolor = "White"
         else: strcolor = "Black"
         print(strcolor+" player's turn")

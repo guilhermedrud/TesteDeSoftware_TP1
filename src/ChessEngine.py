@@ -3,6 +3,8 @@ from pieces.Rook import Rook
 from pieces.Bishop import Bishop
 from pieces.King import King
 from pieces.Knight import Knight
+from pieces.Pawn import Pawn
+from pieces.Queen import Queen
 import Board
 import numpy as np
 from typing import Tuple
@@ -90,7 +92,7 @@ class ChessEngine:
                 self.pieces[next[0]][next[1]] = None; # come peça
             self.pieces[next[0]][next[1]] = self.pieces[current[0]][current[1]]
             self.pieces[current[0]][current[1]] = None
-            new_pos = (destination[0],int(destination[1]))
+            new_pos = (destination[0],int(destination[1])-1)
             self.pieces[next[0]][next[1]].set_curr_pos(new_pos)
             self.update_movements()
         else:
