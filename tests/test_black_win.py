@@ -13,6 +13,8 @@ class TestBlackWin(unittest.TestCase):
                 f.close()
                 
                 self.assertIn('Black win!', cp.stdout)
+                
+                cp.kill()
 
 if __name__ == '__name__':
     unittest.main()
