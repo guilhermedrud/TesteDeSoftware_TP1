@@ -29,6 +29,12 @@ if __name__ == "__main__":
         else: strcolor = "Black"
         print(strcolor+" player's turn")
         play = input()
+        if play == "draw":
+            print("Do you also want to draw the game? (draw/no)")
+            draw2 = input()
+            if draw2 == "draw":
+                print("Draw!")
+                break
         curr,dest =play.split(' ')
         try:
             lose = B.move_piece(curr, dest, color)
