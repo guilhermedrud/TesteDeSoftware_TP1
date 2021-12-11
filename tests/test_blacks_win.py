@@ -2,8 +2,8 @@ import unittest
 import subprocess
 from tempfile import SpooledTemporaryFile as tempfile
 
-class TestBlackWins(unittest.TestCase):
-        def test_play(self):
+class TestBlackWin(unittest.TestCase):
+        def test_black_win(self):
                 f = tempfile()
                 f.write(b'a2 a4\nb8 c6\ne2 e3\nc6 d4\ne1 e2\nd4 e2\n')
                 f.seek(0)
