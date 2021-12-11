@@ -8,12 +8,15 @@ from src.pieces.Queen import Queen
 from src.Board import Board
 import numpy as np
 from typing import Tuple
+from stockfish import Stockfish
 
 class ChessEngine:
     def __init__(self, project: Board):
+        self.board = project
         self.pieces = np.empty((project.size,project.size),dtype=Piece)
         self.board_size = project.size
         self.create_pieces(project)
+        self.ai = Stockfish()
 
     def pair_to_str(self, row: int, col: int):
         bounds = ['a','b','c','d','e','f','g','h']
@@ -50,6 +53,16 @@ class ChessEngine:
     
     def get_board(self):
         return self.pieces
+
+    def update_board(self):
+        board = np.empty((self.board_size,self.board_size), dtype=str)
+        for i in range(self.board_size):
+            for j in range(self.board_size):
+                if self.pieces[i][j] != None:
+                    board[i][j] = self.pieces[i][j].get_san_code()
+                else:
+                    board[i][j] = " "
+        self.board.board = board
 
     def update_movements(self):
         for i in range(self.board_size):
@@ -100,6 +113,15 @@ class ChessEngine:
             self.pieces[current[0]][current[1]].highlight_possible_moves()
             raise Exception("invalid movement")
         return lose
+    
+    def ai_move(self,color):
+        castle = " - - 0 1"
+        self.update_board()
+        board_str = self.board.to_string()
+        fen_str = board_str+" "+color+castle
+        self.ai.set_fen_position(fen_str)
+        best_move = self.ai.get_best_move()
+        return best_move[0:2]+" "+best_move[2:]
 
     def print_board(self):
         bounds = ['a','b','c','d','e','f','g','h']

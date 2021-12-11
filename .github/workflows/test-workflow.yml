@@ -18,6 +18,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install numpy
           pip install coverage
+          sudo apt install stockfish
+          pip install stockfish
       - name: Test with unittest
         run: | 
           python -m unittest -v
